@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚴 Tour de France 2025 - Alertele Tale</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; min-height: 100vh; padding: 20px;
+        }
+        .container {
+            max-width: 400px; margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+            border-radius: 20px; padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .header { text-align: center; margin-bottom: 30px; }
+        .header h1 { font-size: 2em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
+        .header p { opacity: 0.9; font-size: 1.1em; }
+        .alert-card {
+            background: rgba(255, 255, 255, 0.15); border-radius: 15px;
+            padding: 20px; margin-bottom: 15px;
+            border-left: 5px solid #FFD700; transition: transform 0.3s ease;
+        }
+        .alert-card:hover { transform: translateY(-5px); }
+        .alert-card.priority {
+            border-left-color: #FF6B6B;
+            background: rgba(255, 107, 107, 0.2);
+        }
+        .alert-card.final {
+            border-left-color: #4ECDC4;
+            background: rgba(78, 205, 196, 0.2);
+        }
+        .date { font-size: 1.2em; font-weight: bold; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .event { font-size: 1.1em; margin-bottom: 5px; }
+        .time { opacity: 0.8; font-size: 0.9em; }
+        .quick-action {
+            background: #FFD700; color: #333; border: none;
+            border-radius: 25px; padding: 15px 25px;
+            font-size: 1.1em; font-weight: bold; cursor: pointer;
+            width: 100%; margin-top: 20px; transition: all 0.3s ease;
+        }
+        .quick-action:hover { background: #FFC107; transform: scale(1.05); }
+        .tip {
+            background: rgba(255, 255, 255, 0.1); border-radius: 10px;
+            padding: 15px; margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚴 Tour de France 2025</h1>
+            <p>Alertele tale simple</p>
+        </div>
+
+        <div class="alert-card"><div class="date">📅 Sâmbătă, 5 Iulie</div><div class="event">🚴 Etapa 1</div><div class="time">📍 Lille ➝ Lens (plat)</div></div>
+        <div class="alert-card"><div class="date">📅 Duminică, 6 Iulie</div><div class="event">🚴 Etapa 2</div><div class="time">📍 Amiens ➝ Rouen</div></div>
+        <div class="alert-card"><div class="date">📅 Luni, 7 Iulie</div><div class="event">🚴 Etapa 3</div><div class="time">📍 Evreux ➝ Alençon</div></div>
+        <div class="alert-card"><div class="date">📅 Marți, 8 Iulie</div><div class="event">🚴 Etapa 4</div><div class="time">📍 Laval ➝ Saumur</div></div>
+        <div class="alert-card"><div class="date">📅 Miercuri, 9 Iulie</div><div class="event">🚴 Etapa 5</div><div class="time">📍 Tours ➝ Châteauroux</div></div>
+        <div class="alert-card priority"><div class="date">📅 Joi, 10 Iulie</div><div class="event">🏔️ Etapa 6</div><div class="time">📍 Limoges ➝ Aurillac</div></div>
+        <div class="alert-card priority"><div class="date">📅 Vineri, 11 Iulie</div><div class="event">⛰️ Etapa 7</div><div class="time">📍 Aurillac ➝ Rodez</div></div>
+        <div class="alert-card"><div class="date">📅 Sâmbătă, 12 Iulie</div><div class="event">🚴 Etapa 8</div><div class="time">📍 Millau ➝ Carcassonne</div></div>
+        <div class="alert-card priority"><div class="date">⚡ Duminică, 13 Iulie</div><div class="event">⏱️ Etapa 9 - cronometru</div><div class="time">📍 Peyragudes - 11km</div></div>
+        <div class="alert-card"><div class="date">📅 Luni, 14 Iulie</div><div class="event">🚴 Pauză</div><div class="time">🛌 Zi de odihnă</div></div>
+        <div class="alert-card priority"><div class="date">🌋 Marți, 22 Iulie</div><div class="event">🏔️ Etapa 16</div><div class="time">📍 Mont Ventoux</div></div>
+        <div class="alert-card priority"><div class="date">🏔️ Vineri, 25 Iulie</div><div class="event">⛰️ Etapa 19</div><div class="time">📍 Col de la Loze</div></div>
+        <div class="alert-card final"><div class="date">🏆 Duminică, 27 Iulie</div><div class="event">🎉 FINALA PARIS</div><div class="time">📍 Champs-Élysées</div></div>
+
+        <button class="quick-action pulse" onclick="setReminder()">📱 Setează alarmă simplă la 13:00</button>
+
+        <div class="tip">
+            <strong>💡 Etape cheie:</strong><br>
+            • <strong>5 iulie:</strong> Start în Lille<br>
+            • <strong>13 iulie:</strong> Cronometru în munte<br>
+            • <strong>22 iulie:</strong> Mont Ventoux<br>
+            • <strong>25 iulie:</strong> Col de la Loze<br>
+            • <strong>27 iulie:</strong> Finala Paris
+        </div>
+    </div>
+
+    <script>
+        function setReminder() {
+            if (window.innerWidth > 768) {
+                window.open('https://calendar.google.com/calendar/u/0/r/eventedit?text=🚴%20Verifică%20Tour%20de%20France&dates=20250705T110000Z/20250705T120000Z&recur=RRULE:FREQ=DAILY;UNTIL=20250727T235959Z', '_blank');
+            } else {
+                alert('📱 Deschide aplicația CEAS pe telefon:\n\n⏰ Setează alarmă la 13:00\n🏷️ Etichetă: "Tour de France"\n🔄 Repetă: Zilnic în iulie\n\n✅ Gata! Ai alertele tale simple!');
+            }
+        }
+    </script>
+</body>
+</html>
